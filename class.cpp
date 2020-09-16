@@ -10,11 +10,13 @@
 using namespace std;
 test::test()
 {
-
+    a=10;
+    cout << a << endl;
+    cout << this << endl;
 }
 test::~test()
 {
-
+    cout << "in ~test" << endl;
 }
 void test::add()
 {
@@ -31,4 +33,10 @@ void test::print()
 void test::insert(int b)
 {
     a=b;
+}
+int main()
+{
+    {
+        test q[2];
+    }
 }

@@ -11,7 +11,7 @@
 class test {
 public:
     test();
-    virtual ~test;
+    ~test();
     void insert(int b);
     void add();
     void del();
