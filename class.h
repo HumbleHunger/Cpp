@@ -10,8 +10,9 @@
 
 class test {
 public:
-    test();
+    test():a(10){};
     ~test();
+    void test1(int i);
     void insert(int b);
     void add();
     void del();
