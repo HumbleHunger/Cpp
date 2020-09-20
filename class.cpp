@@ -4,7 +4,6 @@
 	> Mail: 
 	> Created Time: 2020年09月14日 星期一 22时21分58秒
  ************************************************************************/
-
 #include<iostream>
 #include"class.h"
 using namespace std;
@@ -34,15 +33,19 @@ void test::print()
 void test::insert(int b)
 {
     a=b;
+    cout << "in insert" << a << endl;
 }
 int main()
 {
-    {
-        test *p=new test[5];
-        /*for(int i=0;i<5;i++){
+    /*{
+        sub *p=new sub[5];
+        for(int i=0;i<5;i++){
             p[i].test1(i);
-        }*/
+        }
+        //p[0].insert(999);
+        p[0].set(1000);
         //p--;
         delete []p;
-    }
+    }*/
+    group h;
 }
