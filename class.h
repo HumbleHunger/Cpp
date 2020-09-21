@@ -11,7 +11,7 @@
 using namespace std;
 class test {
 public:
-    test(int i):a(i){cout << a << "in test" << endl;};
+    test(int i);
     ~test();
     void test1(int i);
     void add();
@@ -23,14 +23,28 @@ private:
     int a;
     test():a(10){cout << a << "in test" << endl;};
 };
+inline test::test(int i):a(i){cout << a << "in test" << endl;};
+
 class sub : public test {
 public:
-    void set(int i){
-        cout << "in set" <<endl;
-        insert(i);
-    }
+    void set(int i);
+    int f(int i);
+    int f(int i,int j=10);
     sub(int i):test(i){}
 };
+inline void sub::set(int i){
+    cout << "in set" <<endl;
+    insert(i);
+}
+inline int sub::f(int i){
+    cout << "in sub f1" << endl;
+    return 0;
+}
+inline int sub::f(int i,int j){
+    cout << "in sub f2" << i << "  " << j << endl;
+    return 0;
+}
+
 class group {
 private:
     sub s;

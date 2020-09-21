@@ -47,5 +47,8 @@ int main()
         //p--;
         delete []p;
     }*/
+    sub p(0);
+    //p.f(1);
+    p.f(2,22);
     group h;
 }
