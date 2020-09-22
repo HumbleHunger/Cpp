@@ -19,7 +19,6 @@ public:
     void print();
 protected:
     void insert(int b);
-private:
     int a;
     test():a(10){cout << a << "in test" << endl;};
 };
@@ -28,6 +27,7 @@ inline test::test(int i):a(i){cout << a << "in test" << endl;};
 class sub : public test {
 public:
     void set(int i);
+    void print(){cout << "print is " << a << endl;}
     int f(int i);
     int f(int i,int j=10);
     sub(int i):test(i){}

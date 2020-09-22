@@ -47,8 +47,10 @@ int main()
         //p--;
         delete []p;
     }*/
-    sub p(0);
+    sub p(1890);
     //p.f(1);
+    test *zz=(test *)&p;
     p.f(2,22);
+    zz->print();
     group h;
 }
