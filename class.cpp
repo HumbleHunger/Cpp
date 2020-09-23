@@ -7,6 +7,7 @@
 #include<iostream>
 #include"class.h"
 using namespace std;
+int test::b;
 void test::test1(int i)
 {
     a=i;
@@ -30,10 +31,10 @@ void test::print()
 {
     cout << "print is "<< b << "aaa" << endl;
 }
-void test::insert(int b)
+void test::insert(int a)
 {
-    a=b;
-    cout << "in insert" << a << endl;
+    b=a;
+    cout << "in insert" << b << endl;
 }
 test f()
 {
@@ -60,10 +61,14 @@ int main()
     //p.f(2,22);
     //zz->print();
     //group h;
-    test q(455);
+    //test q(455);
     //const test& y=f();
-    test* z=&q;
-    cout << "z.b is " << z->b << "ovead" << endl;
+    //test* z=&q;
+    test q,w;
+    q.insert(119);
+    w.print();
+    w.insert(110);
+    q.print();
     //y.print();
     //y.print();
     //y.b=20;
