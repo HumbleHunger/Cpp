@@ -17,12 +17,14 @@ public:
     void add();
     void del();
     void print();
+private:
+    int b;
 protected:
     void insert(int b);
     int a;
     test():a(10){cout << a << "in test" << endl;};
 };
-inline test::test(int i):a(i){cout << a << "in test" << endl;};
+inline test::test(int i):b(i){cout << b << "in test" << endl;};
 
 class sub : public test {
 public:

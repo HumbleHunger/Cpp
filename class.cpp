@@ -16,7 +16,7 @@ void test::test1(int i)
 test::~test()
 {
     cout << "in ~test" << endl;
-    cout << a << endl;
+    cout << b << endl;
 }
 void test::add()
 {
@@ -28,12 +28,18 @@ void test::del()
 }
 void test::print()
 {
-    cout << a << endl;
+    cout << "print is "<< b << "aaa" << endl;
 }
 void test::insert(int b)
 {
     a=b;
     cout << "in insert" << a << endl;
+}
+test f()
+{
+    test a(123);
+
+    return a;
 }
 int main()
 {
@@ -47,10 +53,25 @@ int main()
         //p--;
         delete []p;
     }*/
-    sub p(1890);
+    //sub p(1890);
     //p.f(1);
-    test *zz=(test *)&p;
-    p.f(2,22);
-    zz->print();
-    group h;
+    //test *zz=(test *)&p;
+    
+    //p.f(2,22);
+    //zz->print();
+    //group h;
+    test q(455);
+    //const test& y=f();
+    test* z=&q;
+    cout << "z.b is " << z->b << "ovead" << endl;
+    //y.print();
+    //y.print();
+    //y.b=20;
+    //f()=q;
+    //f().print();
+    //cout << "f().b is "<< f().b << " over"<< endl;
+
+
+
+
 }
