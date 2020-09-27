@@ -13,6 +13,7 @@ class test {
 public:
     test(int i);
     ~test();
+    const test operator+(const test&)const;
     void test1(int i);
     void add();
     void del();
