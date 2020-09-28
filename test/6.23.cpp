@@ -7,6 +7,7 @@
 
 #include<iostream>
 using namespace std;
+void f(&int);
 void print(const int *beg,const int *end)
 {
     while(beg!=end){
@@ -24,7 +25,7 @@ void print(const int a[10])
     //while(auto elem : a){
     //    cout << elem << endl;
     //}
-    for(int i=0;i<10;++i){
+    for(int i=0;i;++i){
         cout << a[i] << " " << endl;
     }
 }
