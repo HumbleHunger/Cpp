@@ -23,8 +23,9 @@ void f1(const vector<int> &v)
 }
 void f2(const vector<int> &v)
 {
-    for(decltype(v.size()) i=0;i!=v.size()/2;++i){
-        cout << v[i]+v[v.size()-i-1] << " ";
+    int i=1;
+    for(auto it=v.begin();it!=v.begin()+v.size()/2;++it,++i){
+        cout << *it+*(v.end()-i) << " ";
     }
 }
 int main()
