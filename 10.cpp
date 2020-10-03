@@ -11,10 +11,7 @@ int main()
 {
     const int h=10;
     const auto a = 0;
-    //a=6;
     const int &b=a;
-    //b=h;
     decltype(b) c=h;
     std::cout << "b is " << b << "c is " << c << std::endl;
-    return 0;
 }
