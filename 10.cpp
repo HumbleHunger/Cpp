@@ -9,7 +9,6 @@
 using namespace std;
 int main()
 {
-    const int h=10;
     const auto a = 0;
     const int &b=a;
     decltype(b) c=h;
