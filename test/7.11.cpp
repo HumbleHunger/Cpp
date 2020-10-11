@@ -18,14 +18,14 @@ istream &read(istream &i,data &a);
 }*/
 class data {
 public:
-    data()=default;
-    data(const string &s):bookNo(s){cout << "data(1)" << endl;print();}
-    data(const string &s,int n,double m):bookNo(s),num(n),money(m){cout << "data(3)" << endl;print();}
-    data(istream &i){
+    data():data("",0,0){cout << "data()" << endl;print();};
+    data(const string &s):data(s,0,0){cout << "data(1)" << endl;print();}
+    data(istream &i):data(){
         read(i,*this);
         cout << "data(is)" << endl;
         print();
     }
+    data(const string &s,int n,double m):bookNo(s),num(n),money(m){cout << "data(3)" << endl;print();}
     void print(){
         cout << this->bookNo << " " << this->num << " " << this->money << endl;
     }
@@ -49,7 +49,6 @@ data::data(istream &i){
 int main()
 {
     data a;
-    cout << "data()" << endl;
     data b("abcd");
     data("aasd",2,6);
     data d(cin);
