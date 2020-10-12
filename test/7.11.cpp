@@ -29,6 +29,9 @@ public:
     void print(){
         cout << this->bookNo << " " << this->num << " " << this->money << endl;
     }
+    void test(const data &a){
+        cout << a.bookNo << endl;
+    }
     string bookNo;
     int num=0;
     double money=0;
@@ -49,8 +52,11 @@ data::data(istream &i){
 int main()
 {
     data a;
-    data b("abcd");
+    string s("abcd");
+    a.test(s);
+    /*data b("abcd");
     data("aasd",2,6);
     data d(cin);
+    */
     return 0;
 }
