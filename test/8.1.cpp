@@ -6,6 +6,7 @@
  ************************************************************************/
 
 #include<iostream>
+#include<sstream>
 using namespace std;
 istream &f(istream &is)
 {
@@ -27,7 +28,9 @@ istream &f(istream &is)
 }
 int main()
 {
-    f(cin);
+    string s("sajdajdskadas dfjds sdf sfdsf  dsf s df sdf sdfsd fs");
+    istringstream ist(s);
+    f(ist);
     cout << "over\n";
     return 0;
 }
