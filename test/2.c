@@ -1,15 +1,18 @@
 /*************************************************************************
-	> File Name: 1.c
+	> File Name: 2.c
 	> Author: 
 	> Mail: 
-	> Created Time: 2020年10月24日 星期六 21时58分07秒
+	> Created Time: 2020年10月29日 星期四 21时25分20秒
  ************************************************************************/
+
 #include<stdio.h>
 int main()
 {
-    int a=0,b=0;
-    char c='a';
-    scanf("%d %d %c",a,b,c);
-    printf("%d %d %c",a,b,c);
+    int chose=1;
+    while(chose){
+        printf("XiyouLinux\n");
+        scanf("%d",&chose);
+    }
+    printf("XiyouLinux\n");
     return 0;
 }
