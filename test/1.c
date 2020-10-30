@@ -7,9 +7,7 @@
 #include<stdio.h>
 int main()
 {
-    int a=0,b=0;
-    char c='a';
-    scanf("%d %d %c",a,b,c);
-    printf("%d %d %c",a,b,c);
+    printf("%d\n",printf("XiyouLinux\n"));
+    printf("%d\n",printf("Xiyou\0Linux\n"));
     return 0;
 }
