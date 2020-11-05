@@ -7,7 +7,5 @@
 #include<stdio.h>
 int main()
 {
-    printf("%d\n",printf("XiyouLinux\n"));
-    printf("%d\n",printf("Xiyou\0Linux\n"));
     return 0;
 }
