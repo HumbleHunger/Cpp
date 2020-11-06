@@ -8,10 +8,6 @@
 #include<stdio.h>
 int main()
 {
-    int chose=1;
-    while(chose){
-        scanf("%d",&chose);
-        printf("XiyouLinux\n");
     }
     return 0;
 }
