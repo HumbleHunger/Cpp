@@ -11,9 +11,5 @@ int main()
     char ch[17]="Xiyou_Linux_Group";
     char *str="Xiyou_Linux_Group";
     printf("%s\n%s\n",ch,str);
-    *ch='K';
-    printf("Hello");
-    *str='K';
-    printf("World");
     return 0;
 }
