@@ -77,20 +77,35 @@ istream & operator>>(istream & in,String & s)
     in >> s.data;
     return in;
 }
-ostream & operator<<(ostream & out,String & s)
+ostream & operator<<(ostream & out,const String & s)
 {
     out << s.data;
     return out;
 }
-const String String::operator+(const String & s)
+istream & getline(istream & in,String & s){
+    in >> s;
+    return in;
+}
+String operator+(const String & s1,const String & s2)
 {
-    char temp[this->data_size+s.data_size+1];
+    char temp[s1.data_size+s2.data_size+1];
     memset(temp,0,sizeof(temp));
-    strncpy(temp,this->data,this->data_size);
-    strcat(temp,s.data);
+    strncpy(temp,s1.data,s1.data_size);
+    strcat(temp,s2.data);
+    cout << temp << endl;
     return String(temp);
 }
-
+String operator+(const String & s1,const char * s2)
+{
+    return String(s1+String(s2));
+}
+bool String::operator!=(const String & s)
+{
+    if(*this==s)
+        return false;
+    else    
+        return true;
+}
 
 
 

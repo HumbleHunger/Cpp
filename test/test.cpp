@@ -1,22 +1,26 @@
 #include <iostream>
 #include "String.h"
+#include <string>
+#include <fstream>
 int main()
 {
-    String s("abc");
-    String a(s);
-    String d;
-    String c(s+a);
-    d=s;
-    cout << s << endl;
-    cout << a << endl;
-    cout << d << endl;
-    cout << c << endl;
-    s[0]='b';
-    cout << s[0] << endl;
-    if(s>c)
-        cout << ">" << endl;
-    if(s<c)
-        cout << "<" << endl;
-    if(s==c)
-        cout << "=" << endl;
+    String s1("abc");
+    String s2(s1);
+    String s3=s1;
+    String s4="abc";
+    String s5(3,'a');
+    String s6(s1+"def");
+    String s7;
+    ifstream in("1.c");
+    getline(in,s7);
+    for(auto a : s1){
+        cout << a <<endl;
+    }
+    cout << "jlk"+s1 << endl;
+    cout << s2.size() << endl;
+    cout << s3.empty() << endl;
+    cout << s4 << endl;
+    cout << s5 << endl;
+    cout << s6 << endl;
+    cout << s7 << endl;
 }
