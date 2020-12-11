@@ -16,12 +16,15 @@ class String
     bool operator==(const String&);
     char & operator[](size_t index);
     bool operator!=(const String&);
+    bool operator>=(const String&);
+    bool operator<=(const String&);
     
     friend String operator+(const String &,const String &);
     friend String operator+(const String &,const char *);
     friend istream & operator>>(istream &,String & s);
     friend ostream & operator<<(ostream &,const String &);
     friend istream & getline(istream &,String &);
+
 
     bool empty(){
         if(data_size)

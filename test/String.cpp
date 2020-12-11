@@ -106,6 +106,20 @@ bool String::operator!=(const String & s)
     else    
         return true;
 }
+bool String::operator<=(const String & s)
+{
+    if(*this>s)
+        return false;
+    else    
+        return true;
+}
+bool String::operator>=(const String & s)
+{
+    if(*this<s)
+        return false;
+    else    
+        return true;
+}
 
 
 
