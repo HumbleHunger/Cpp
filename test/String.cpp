@@ -2,32 +2,36 @@
 #include "String.h"
 #include <cstring>
 using namespace std;
+#define SIZE 32
 String::String(const char *s)
 {
     if(s==nullptr){
         data_size=0;
-        data=new char[1];
-        data[0]=0;
+        Capacity=SIZE;
+        data=new char[SIZE];
+        memset(data,0,SIZE);
     }
     else{
         data_size=strlen(s);
-        data=new char[data_size+1];
-        memset(data,0,data_size+1);
+        Capacity=(data_size/SIZE+1)*SIZE;
+        data=new char[Capacity];
+        memset(data,0,Capacity);
         strncpy(data,s,data_size);
     }
 }
-String::String(int n,char c)
+String::String(size_t n,char c)
 {
-    data_size=n;
-    data=new char[data_size+1];
-    memset(data,0,data_size+1);
-    memset(data,c,n);
+    char s[n+1];
+    memset(s,c,n);
+    s[n]=0;
+    String((char *)s);
 }
 String::String(const String & s)
 {
     data_size=s.data_size;
-    data=new char[data_size+1];
-    memset(data,0,data_size+1);
+    Capacity=s.Capacity;
+    data=new char[Capacity];
+    memset(data,0,Capacity);
     strncpy(data,s.data,data_size);
 }
 String::~String()
@@ -39,8 +43,9 @@ String& String::operator=(const String & s)
     auto news=new String(s);
     delete []data;
     data_size=news->data_size;
-    data=new char[data_size+1];
-    memset(data,0,data_size+1);
+    Capacity=news->Capacity;
+    data=new char[Capacity];
+    memset(data,0,Capacity);
     strncpy(data,news->data,data_size);
     return *this;
 }
@@ -92,7 +97,6 @@ String operator+(const String & s1,const String & s2)
     memset(temp,0,sizeof(temp));
     strncpy(temp,s1.data,s1.data_size);
     strcat(temp,s2.data);
-    cout << temp << endl;
     return String(temp);
 }
 String operator+(const String & s1,const char * s2)
@@ -120,8 +124,30 @@ bool String::operator>=(const String & s)
     else    
         return true;
 }
-
-
+void String::push_back(const char *s)
+{
+    *this=String(*this+s);
+}
+void String::push_back(const char c)
+{
+    *this=String(*this+&c);
+}
+String & String::insert(size_t pos1, const String &str)
+{
+    if(check(pos1)){
+        char* end=data+pos1;
+        *this=*this+str+end;
+        return *this;
+    }
+}
+String &String::insert(size_t pos1, const char *s)
+{
+    if(check(pos1)){
+        char *end=data+pos1;
+        *this=*this+s+end;
+        return *this;
+    }
+}
 
 
 
