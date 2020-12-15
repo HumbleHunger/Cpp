@@ -30,8 +30,8 @@ int main()
 */
     String s1("abc");
     cout << s1 << endl;
-    s1.push_back("def");
+    s1.insert(1,"def");
     cout << s1 << endl;
-    s1.push_back('g');
+    s1.insert(2,s1);
     cout << s1 << endl;
 }

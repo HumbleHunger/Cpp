@@ -4,6 +4,8 @@
 using namespace std;
 class String
 {
+    typedef char* value_type;
+
     friend String operator+(const String &,const String &);
     
     friend String operator+(const String &,const char *);

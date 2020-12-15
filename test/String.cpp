@@ -132,21 +132,37 @@ void String::push_back(const char c)
 {
     *this=String(*this+&c);
 }
-String & String::insert(size_t pos1, const String &str)
+String & String::insert(size_t pos1, const String &s)
 {
     if(check(pos1)){
-        char* end=data+pos1;
-        *this=*this+str+end;
-        return *this;
+        char* end=data+pos1+1;
+        char begin[pos1+2];
+        memset(begin,0,pos1+2);
+        strncpy(begin,data,pos1+1);
+        if(*end){
+            *this=begin+s+end;
+        }
+        else{
+            *this=*this+s;
+        }
     }
+    return *this;
 }
 String &String::insert(size_t pos1, const char *s)
 {
     if(check(pos1)){
-        char *end=data+pos1;
-        *this=*this+s+end;
-        return *this;
+        char* end=data+pos1+1;
+        char begin[pos1+2];
+        memset(begin,0,pos1+2);
+        strncpy(begin,data,pos1+1);
+        if(*end){
+            *this=String(begin)+s+end;
+        }
+        else{
+            *this=*this+s;
+        }
     }
+    return *this;
 }
 
 
