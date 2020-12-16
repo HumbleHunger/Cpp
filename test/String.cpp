@@ -34,6 +34,17 @@ String::String(const String & s)
     memset(data,0,Capacity);
     strncpy(data,s.data,data_size);
 }
+//template <typename Iter>
+/*String::String(Iter begin,Iter end)
+{
+    data_size=end-begin;
+    Capacity=(data_size/SIZE+1)*SIZE;
+    data=new char[Capacity];
+    memset(data,0,Capacity);
+    for(Iter iter=begin;iter!=end;++iter){
+        push_back(*iter);
+    }
+}*/
 String::~String()
 {
     delete []data;

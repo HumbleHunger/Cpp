@@ -2,6 +2,7 @@
 #include "String.h"
 #include <string>
 #include <fstream>
+#include <vector>
 int main()
 {
     /*
@@ -28,10 +29,9 @@ int main()
     cout << s6 << endl;
     cout << s7 << endl;
 */
-    String s1("abc");
+    vector<char> s={'a','b','v','s','e','d'};
+    String s1("abcdefasdfasdf");
     cout << s1 << endl;
-    s1.insert(1,"def");
-    cout << s1 << endl;
-    s1.insert(2,s1);
-    cout << s1 << endl;
+    string s2(s.begin(),s.end());
+    cout << s2 << endl;
 }

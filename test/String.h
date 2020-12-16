@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
 #include <cstddef>
+#include <iterator>
+#include "String_iterator.h"
 using namespace std;
 class String
 {
-    typedef char* value_type;
+    typedef String_iterator iterator;
 
     friend String operator+(const String &,const String &);
     
@@ -24,6 +26,9 @@ class String
     
     String(const String & s);
     
+ //   template <typename Iter>
+ //   String(Iter begin,Iter end);
+
     ~String();
     
     String& operator=(const String&);
@@ -53,12 +58,12 @@ class String
         return data_size;
     }
     
-    char * begin(){
-        return data;
+    iterator begin(){
+        return iterator(data);
     }
     
-    char * end(){
-        return data+data_size;
+    iterator end(){
+        return iterator(data+data_size);
     }
     
     void push_back(const char *s);
@@ -77,7 +82,6 @@ class String
 
     String &insert(const int n,const char c);
 
-    char *insert(char *it,const String & str);
     
     private:
     
@@ -92,4 +96,28 @@ class String
     size_t data_size;
     size_t Capacity;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
