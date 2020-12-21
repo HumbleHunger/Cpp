@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cstddef>
+#include <cstring>
 #include <iterator>
 #include "String_iterator.h"
 using namespace std;
@@ -26,8 +27,8 @@ class String
     
     String(const String & s);
     
- //   template <typename Iter>
- //   String(Iter begin,Iter end);
+    template <typename Iter>
+    String(Iter begin,Iter end);
 
     ~String();
     
@@ -82,7 +83,15 @@ class String
 
     String &insert(const int n,const char c);
 
+    String &remove(const int n);   
     
+    char &at(size_t n);
+    
+    void clear(){
+        memset(data,0,data_size);
+    }
+
+    String &replace(const char & ch,const char & ch1);
     private:
     
     bool check(size_t index){

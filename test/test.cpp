@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <iterator>
+#include <algorithm>
 int main()
 {
     /*
@@ -29,9 +31,10 @@ int main()
     cout << s6 << endl;
     cout << s7 << endl;
 */
-    vector<char> s={'a','b','v','s','e','d'};
-    String s1("abcdefasdfasdf");
+    string s={'a','b','v','s','e','d'};
+    String s1("aaaaaaaaaaaaa");
+    s1.replace('a','b');
     cout << s1 << endl;
-    string s2(s.begin(),s.end());
-    cout << s2 << endl;
+    s1.clear();
+    cout << s1 <<endl;
 }

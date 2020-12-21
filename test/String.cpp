@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "String.h"
 #include <cstring>
 using namespace std;
@@ -34,8 +35,8 @@ String::String(const String & s)
     memset(data,0,Capacity);
     strncpy(data,s.data,data_size);
 }
-//template <typename Iter>
-/*String::String(Iter begin,Iter end)
+template <typename Iter>
+String::String(Iter begin,Iter end)
 {
     data_size=end-begin;
     Capacity=(data_size/SIZE+1)*SIZE;
@@ -44,7 +45,7 @@ String::String(const String & s)
     for(Iter iter=begin;iter!=end;++iter){
         push_back(*iter);
     }
-}*/
+}
 String::~String()
 {
     delete []data;
@@ -175,6 +176,43 @@ String &String::insert(size_t pos1, const char *s)
     }
     return *this;
 }
+String &String::remove(const int n)
+{
+   char beg[data_size];
+   memset(beg,0,data_size);
+   strncpy(beg,data,n);
+   strncpy(beg+n,data+n+1,data_size-n-1);
+   *this=String(beg);
+    return *this;
+}
+char &String::at(size_t n)
+{
+    return *(data+n);
+}
+String &String::replace(const char & ch,const char & ch1)
+{
+    iterator iter;
+    while(1){
+        iter=find(begin(),end(),ch);
+        if(iter!=end())
+            *iter=ch1;
+        else
+            break;
+    }
+    *iter=ch1;
+    return *this;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

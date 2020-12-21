@@ -1,9 +1,10 @@
 #pragma once
 using namespace std;
 #include <iterator>
-class String_iterator:public iterator<random_access_iterator_tag,char>
+class String_iterator:public iterator<input_iterator_tag,char>
 {
 public:
+    explicit String_iterator():ptr(nullptr){}
     explicit String_iterator(char * data):ptr(data){}
     ~String_iterator() {}
     char& operator*(){
