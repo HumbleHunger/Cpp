@@ -7,12 +7,12 @@
 #include <algorithm>
 int main()
 {
-    /*
-*/
     string s={'a','b','v','s','e','d'};
     String s1("aaaaaaaaaaaaa");
     s1.replace('a','b');
     cout << s1 << endl;
     s1.clear();
     cout << s1 <<endl;
+    String s2="adsfsdf";
+    cout << s2 << endl;
 }
