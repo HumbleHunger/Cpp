@@ -92,6 +92,30 @@ class String
     }
 
     String &replace(const char & ch,const char & ch1);
+    
+    char *str() const{return data;}
+
+    size_t length(){
+        return data_size;
+    }
+
+    void swap(String &s){
+        String temp=*this;
+        *this=s;
+        s=temp;
+    }
+
+    size_t find(char c){
+        size_t i=0;
+        while(i!=data_size){
+            if(data[i++]==c){
+                return i-1;
+            }
+        }
+        return -1;
+    }
+
+    String substr(int i,int j);
     private:
     
     bool check(size_t index){

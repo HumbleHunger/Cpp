@@ -193,16 +193,21 @@ String &String::replace(const char & ch,const char & ch1)
 {
     iterator iter;
     while(1){
-        iter=find(begin(),end(),ch);
+        iter=::find(begin(),end(),ch);
         if(iter!=end())
             *iter=ch1;
         else
             break;
     }
-    *iter=ch1;
     return *this;
 }
-
+String  String::substr(int i,int j)
+{
+    char s[j-i+2];
+    memset(s,0,j-i+2);
+    strncpy(s,data+i,j-i+1);
+    return String(s);
+}
 
 
 
