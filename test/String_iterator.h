@@ -1,9 +1,10 @@
 #pragma once
 using namespace std;
 #include <iterator>
-class String_iterator:public iterator<input_iterator_tag,char>
+class String_iterator:public iterator<forward_iterator_tag,char>
 {
 public:
+    friend String_iterator operator+(const String_iterator& iter,int i);
     explicit String_iterator():ptr(nullptr){}
     explicit String_iterator(char * data):ptr(data){}
     ~String_iterator() {}
@@ -28,10 +29,27 @@ public:
         ++ptr;
         return *this;
     }
+    String_iterator& operator--(){
+        --ptr;
+        return *this;
+    }
     String_iterator operator++(int){
         String_iterator tmp=*this;
         ++ptr;
         return tmp;
+    }
+    String_iterator operator--(int){
+        String_iterator tmp=*this;
+        --ptr;
+        return tmp;
+    }
+    size_t operator-(const String_iterator& iter){
+        size_t i=0;
+        while(*this!=iter){
+            i++;
+            (*this)--;
+        }
+        return i;
     }
 private:
     char* ptr;

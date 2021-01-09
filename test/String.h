@@ -9,6 +9,8 @@ class String
 {
     typedef String_iterator iterator;
 
+    typedef size_t size_type;
+
     friend String operator+(const String &,const String &);
     
     friend String operator+(const String &,const char *);
@@ -69,7 +71,7 @@ class String
     
     void push_back(const char *s);
     
-    void push_back(const char c);
+    void push_back(char c);
 
     String &insert(size_t pos1, const String &str);
 
@@ -116,6 +118,18 @@ class String
     }
 
     String substr(int i,int j);
+    
+    String substr(iterator b,iterator e);
+    
+    void append(char ch)
+	{
+		push_back(ch);
+	}
+
+    void copy(char* s,int n,int pos);
+
+    String& erase(size_type pos,size_type n);
+
     private:
     
     bool check(size_t index){

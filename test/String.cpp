@@ -111,10 +111,6 @@ String operator+(const String & s1,const String & s2)
     strcat(temp,s2.data);
     return String(temp);
 }
-String operator+(const String & s1,const char * s2)
-{
-    return String(s1+String(s2));
-}
 bool String::operator!=(const String & s)
 {
     if(*this==s)
@@ -140,7 +136,7 @@ void String::push_back(const char *s)
 {
     *this=String(*this+s);
 }
-void String::push_back(const char c)
+void String::push_back(char c)
 {
     *this=String(*this+&c);
 }
@@ -201,14 +197,46 @@ String &String::replace(const char & ch,const char & ch1)
     }
     return *this;
 }
-String  String::substr(int i,int j)
+String String::substr(int i,int j)
 {
     char s[j-i+2];
     memset(s,0,j-i+2);
     strncpy(s,data+i,j-i+1);
     return String(s);
 }
-
+/*String String::substr(iterator b,iterator e)
+{
+    size_t i=b-begin();
+    size_t j=e-begin();
+    return substr(i,j);
+}*/
+String String::substr(iterator b,iterator e)
+{
+    char s[e-b+1];
+    memset(s,0,e-b+1);
+    auto iter=b;
+    cout << *iter << endl;
+    for(int i=0;iter!=e;++iter){
+        s[i++]=*iter;
+        cout << s[i] << endl;
+    }
+    return String(s);
+}
+void String::copy(char* s,int n,int pos)
+{
+    strncpy(s,data+pos,n);
+}
+String& String::erase(size_type pos,size_type n)
+{
+    char s1[pos+1];
+    memset(s1,0,pos+2);
+    strncpy(s1,data,pos);
+    char s2[data_size-pos-n];
+    memset(s2,0,sizeof(s2));
+    strcpy(s2,data+pos+n);
+    *this=String(s1)+s2;
+    return *this;
+}
 
 
 
