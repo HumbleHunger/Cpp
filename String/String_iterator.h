@@ -4,7 +4,6 @@ using namespace std;
 class String_iterator:public iterator<forward_iterator_tag,char>
 {
 public:
-    friend String_iterator operator+(const String_iterator& iter,int i);
     explicit String_iterator():ptr(nullptr){}
     explicit String_iterator(char * data):ptr(data){}
     ~String_iterator() {}
@@ -50,6 +49,9 @@ public:
             (*this)--;
         }
         return i;
+    }
+    String_iterator operator+(size_t i){
+        return String_iterator(ptr+i);
     }
 private:
     char* ptr;

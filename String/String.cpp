@@ -111,6 +111,10 @@ String operator+(const String & s1,const String & s2)
     strcat(temp,s2.data);
     return String(temp);
 }
+String operator+(const String & s,const char * c)
+{
+    return String(s+String(c));
+}
 bool String::operator!=(const String & s)
 {
     if(*this==s)
@@ -204,12 +208,13 @@ String String::substr(int i,int j)
     strncpy(s,data+i,j-i+1);
     return String(s);
 }
-/*String String::substr(iterator b,iterator e)
+String String::substr(iterator b,iterator e)
 {
     size_t i=b-begin();
     size_t j=e-begin();
     return substr(i,j);
-}*/
+}
+/*
 String String::substr(iterator b,iterator e)
 {
     char s[e-b+1];
@@ -222,6 +227,7 @@ String String::substr(iterator b,iterator e)
     }
     return String(s);
 }
+*/
 void String::copy(char* s,int n,int pos)
 {
     strncpy(s,data+pos,n);
@@ -236,6 +242,25 @@ String& String::erase(size_type pos,size_type n)
     strcpy(s2,data+pos+n);
     *this=String(s1)+s2;
     return *this;
+}
+int String::compare(String & s2)
+{
+    if(data_size < s2.data_size)
+        return -1;
+    if(data_size > s2.data_size)
+        return 1;
+    size_t i=0;
+    while(i<data_size){
+        if(data[i]!=s2.data[i]){
+            if(data[i]>s2.data[i])
+                return 1;
+            else
+                return -1;
+        }
+        ++i;
+    }
+    return 0;
+    
 }
 
 

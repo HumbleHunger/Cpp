@@ -19,8 +19,11 @@ int main()
     cout << s2 << endl;
     cout << s3 << endl;
     */
-    String s1="0123456789";
-    cout << s1.substr(0,5) << endl;
-    cout << s1.substr(s1.begin(),s1.begin()+5) << endl;
-    cout << s1 << endl;
+    string s1="1234";
+    string s2="133";
+    String S1="1234";
+    String S2="133";
+    cout << s1.compare(s2) << endl;
+    cout << S1.compare(S2) << endl;
+
 }

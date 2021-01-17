@@ -130,6 +130,7 @@ class String
 
     String& erase(size_type pos,size_type n);
 
+    int compare(String& s2);
     private:
     
     bool check(size_t index){
