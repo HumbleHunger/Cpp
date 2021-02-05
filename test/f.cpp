@@ -9,7 +9,6 @@ public:
         return (double)(a1 + a2) / 3;
     }
 };
-
 int f(int a,int b)
 {
     return a+b;
@@ -18,7 +17,6 @@ int main()
 {
     function<int(int,int)> f1=f;
     function<int(int,int)> f2=C();
-    
     return 0;
 }
 
