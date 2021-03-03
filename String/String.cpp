@@ -262,26 +262,3 @@ int String::compare(String & s2)
     return 0;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
