@@ -6,6 +6,7 @@
  ************************************************************************/
 
 #include<iostream>
+using namespace std;
 int main()
 {
     std::cout << "Enter two number" << std::endl;
